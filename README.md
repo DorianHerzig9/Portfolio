@@ -54,10 +54,10 @@ Erstellung einer Portfolio-Seite mit einem klar strukturierten Backend, das REST
 
 | AP-№ | Datum        | Beschreibung                   | geplante Zeit | tatsächliche Zeit |
 |------|--------------|---------------------------------|---------------|-------------------|
-| 1.A  | 17.11.2025   | Entwicklung des Frontends       | 180 min       | 160 min           |
-| 2.A  | 24.11.2025   | Implementierung des Modals      | 150 min       | 140 min           |
+| 1.A  | 17.11.2025   | Entwicklung des Frontends       | 180 min       | 200 min           |
+| 2.A  | 24.11.2025   | Implementierung des Modals      | 150 min       | 180 min           |
 | 3.A  | 01.12.2025   | Backend-Entwicklung (geplant)   | 180 min       | -                 |
-| 4.A  | 01.12.2025   | Implementierung des Mediator-Patterns im Frontend | 120 min   | 130 min           |
+| 4.A  | 01.12.2025   | Implementierung des Mediator-Patterns im Frontend | 120 min   | 135 min           |
 
 ---
 
