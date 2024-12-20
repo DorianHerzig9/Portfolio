@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <!-- Google Fonts for modern typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header id="top">
+        <h1 class="fade-in">Dorian Herzig</h1>
+        <nav class="slide-down">
+            <a href="#about">Über mich</a>
+            <a href="#projects">Projekte</a>
+            <a href="#contact">Kontakt</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="fade-in">
+            <h2>Über mich</h2>
+            <p>Ich heisse Dorian Herzig und wohne in Rekingen. Derzeit besuche ich die Informatikmittelschule in Baden, wo ich mich intensiv mit Informatik beschäftige. Neben meiner schulischen Ausbildung habe ich auch Erfahrung im Verkauf und in der Festtagsplanung, insbesondere bei Konzerten und Festen in der Region. In meiner Freizeit bin ich aktiv im Schiesssport, insbesondere im Schiessstand Rekingen, und spiele Saxophon in der Musikgesellschaft Rekingen. Meine Sprachkenntnisse umfassen Deutsch als Muttersprache, Englisch (B2) und Französisch (B1). Zudem spreche ich Russisch als zweite Muttersprache. Als Vertreter der Klasse habe ich Verantwortung in verschiedenen schulischen Organisationen übernommen.</p>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="fade-in">
+            <h2>Projekte</h2>
+            <div class="project" data-id="1">
+                <h3>4x4-Chess-1305</h3>
+                <p>In diesem Projekt habe ich ein vereinfachtes Schachspiel in C# programmiert, indem ich ein 4x4 Schachbrett mit nur Bauern als Spielfiguren umgesetzt habe.</p>
+                <p><a href="https://portfolio.bbbaden.ch/view/view.php?t=c08fcaf1789d363b3695" target="_blank">Mahara Portfolio</a></p>
+                <button>Details anzeigen</button>
+            </div>
+            <div class="project" data-id="2">
+                <h3>Binary-Converter_1304</h3>
+                <p>Dieses Teamprojekt umfasst die Entwicklung eines Binary Converters in C#, der Dezimal- und Binärzahlen umwandeln kann.</p>
+                <p><a href="https://portfolio.bbbaden.ch/view/view.php?t=853ebaf2eff1c6caff43" target="_blank">Mahara Portfolio</a></p>
+                <button>Details anzeigen</button>
+            </div>
+            <div class="project" data-id="3">
+                <h3>LA-1303-Roulette</h3>
+                <p>Ein Gruppenprojekt, bei dem wir ein Roulette-Spiel mit Backend in C# und Docker entwickelten, bei dem wir mit Herausforderungen in der Backend-Frontend-Kommunikation konfrontiert wurden.</p>
+                <p><a href="https://portfolio.bbbaden.ch/view/view.php?t=eb9b0c412e45a3332bd4" target="_blank">Mahara Portfolio</a></p>
+                <button>Details anzeigen</button>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="fade-in">
+            <h2>Kontakt</h2>
+            <div class="contact-box hover-scale">
+                <h3>E-Mail</h3>
+                <p><a href="mailto:herzigdorian2@gmail.com">Gmail</a></p>
+            </div>
+            <div class="contact-box hover-scale">
+                <h3>LinkedIn</h3>
+                <p><a href="https://www.linkedin.com/in/dorian-herzig-2435a2310/" target="_blank">LinkedIn-Profil</a></p>
+            </div>
+            <div class="contact-box hover-scale">
+                <h3>GitHub</h3>
+                <p><a href="https://github.com/DorianHerzig9" target="_blank">GitHub-Profil</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Project Details -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-title">Projekt Details</h3>
+            <p id="modal-description">Hier stehen die Details zu deinem Projekt.</p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Dorian Herzig. Alle Rechte vorbehalten. <a href="#top">Zurück nach oben</a></p>
+    </footer>
+
+    <!-- Styles -->
+    <style>
+        /* ... Deine bisherigen CSS-Stile ... */
+    </style>
+
+    <!-- JavaScript -->
+    <script>
+        // Mediator für die Projekt-Kommunikation
+        class ProjectMediator {
+            constructor() {
+                this.projects = [];
+                this.modal = document.getElementById('project-modal');
+                this.title = document.getElementById('modal-title');
+                this.description = document.getElementById('modal-description');
+            }
+
+            // Registrierung der Projekte
+            addProject(projectElement) {
+                this.projects.push(projectElement);
+                const button = projectElement.querySelector('button');
+                button.addEventListener('click', () => this.openProjectModal(projectElement));
+            }
+
+            // Öffnen des Modals und Setzen der Projektdaten
+            openProjectModal(projectElement) {
+                const projectTitle = projectElement.querySelector('h3').textContent;
+                const projectDescription = projectElement.querySelector('p').textContent;
+
+                this.title.textContent = projectTitle;
+                this.description.textContent = projectDescription;
+
+                this.modal.style.display = 'block';
+            }
+
+            // Schließen des Modals
+            closeProjectModal() {
+                this.modal.style.display = 'none';
+            }
+        }
+
+        // Instanz des Mediators erstellen
+        const projectMediator = new ProjectMediator();
+
+        // Nachdem das DOM geladen wurde, füge Projekte zum Mediator hinzu
+        document.addEventListener('DOMContentLoaded', () => {
+            // Alle Projekte auswählen
+            const projects = document.querySelectorAll('.project');
+
+            // Jedes Projekt dem Mediator hinzufügen
+            projects.forEach(project => projectMediator.addProject(project));
+
+            // Event Listener für das Schließen des Modals
+            const modal = document.getElementById('project-modal');
+            const closeButton = document.querySelector('.modal-content .close');
+            closeButton.addEventListener('click', () => projectMediator.closeProjectModal());
+
+            // Event Listener für das Schließen des Modals bei Klick außerhalb
+            window.onclick = (event) => {
+                if (event.target === modal) {
+                    projectMediator.closeProjectModal();
+                }
+            };
+        });
+    </script>
+</body>
+</html>
