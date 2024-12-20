@@ -19,7 +19,7 @@ Erstellung einer Portfolio-Seite mit einer klar strukturierten REST-API, einem r
 |------|-----------------|-----------|--------------------------------------------------------------|
 | 1    | Muss           | Funktion  | Backend-API unterstützt CRUD-Funktionen                     |
 | 2    | Muss           | Funktion  | Frontend ist vollständig responsiv                          |
-| 3    | Kann           | Qualität  | Mediator-Pattern optimiert die Kommunikation zwischen Komponenten |
+| 3    | Muss           | Qualität  | Mediator-Pattern optimiert die Kommunikation zwischen Komponenten |
 
 #### **1.3 Testfälle**  
 | TC-№ | Ausgangslage       | Eingabe                        | Erwartete Ausgabe                                              |
@@ -28,10 +28,6 @@ Erstellung einer Portfolio-Seite mit einer klar strukturierten REST-API, einem r
 | 2.1  | Datenbank mit Daten| GET /api/projects             | Liste gespeicherter Projekte wird angezeigt                   |
 | 3.1  | Falsche Eingabe    | POST ungültige Daten           | Fehlerantwort: \"Ungültige Eingabe\"                          |
 
-#### **1.4 Diagramme**  
-✍️ Diagramme können hier eingefügt werden.
-
----
 
 ### **2. Planen**  
 
