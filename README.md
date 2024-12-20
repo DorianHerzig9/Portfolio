@@ -28,7 +28,7 @@ Erstellung einer Portfolio-Seite mit einem klar strukturierten Backend, das REST
 | 1.1  | Backend nicht implementiert | GET /api/projects       | Fehlerantwort: "Backend nicht verfügbar"                      |
 | 2.1  | Seite geladen      | Keine Eingabe                  | Die Seite wird korrekt angezeigt und ist responsiv.           |
 | 3.1  | Projektliste vorhanden | Klick auf "Details anzeigen"  | Modal mit Projekt-Details wird geöffnet.                       |
-| 4.1  | Modal geöffnet     | Klick auf "Schließen"           | Modal wird geschlossen.                                        |
+| 4.1  | Modal geöffnet     | Klick auf "Schliessen"           | Modal wird geschlossen.                                        |
 
 ---
 
